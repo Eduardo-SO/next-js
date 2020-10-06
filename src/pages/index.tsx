@@ -19,7 +19,7 @@ export default function Home({ recommendedProducts }: HomeProps) {
 
         <ul>
           {recommendedProducts.map(recommendedProduct => (
-            <li>
+            <li key={recommendedProduct.id}>
               <strong>{recommendedProduct.id}</strong>
               <span> {recommendedProduct.title}</span>
             </li>
