@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 
-import { Container, Title } from '../styles/pages/Home';
+import { Container, Title } from '../styles/pages';
 
 interface IProducts {
   id: number;
