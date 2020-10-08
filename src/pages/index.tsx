@@ -1,6 +1,7 @@
+import { useCallback } from 'react';
 import { GetServerSideProps } from 'next';
 
-import { Container, Title } from '../styles/pages';
+import { Container, Title, Button } from '../styles/pages';
 
 interface IProducts {
   id: number;
@@ -12,6 +13,12 @@ interface HomeProps {
 }
 
 export default function Home({ recommendedProducts }: HomeProps) {
+  const handleSum = useCallback(async () => {
+    const math = (await import('../lib/sum')).default;
+
+    alert(math.sum(5, 4));
+  }, []);
+
   return (
     <Container>
       <div>
@@ -25,6 +32,8 @@ export default function Home({ recommendedProducts }: HomeProps) {
             </li>
           ))}
         </ul>
+
+        <Button onClick={handleSum}>Somar</Button>
       </div>
     </Container>
   )
