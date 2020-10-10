@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 
-import { Container, Title } from '../styles/pages';
+import { Container, Title } from '@/styles/pages';
 
 interface IProducts {
   id: number;

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { GetServerSideProps } from 'next';
 
-import { Container, Title, Button } from '../styles/pages';
+import { Container, Title, Button } from '@/styles/pages';
 
 interface IProducts {
   id: number;
