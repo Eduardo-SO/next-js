@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { GetServerSideProps } from 'next';
 
+import SEO from '@/components/SEO';
 import { Container, Title, Button } from '@/styles/pages';
 
 interface IProducts {
@@ -23,6 +24,12 @@ export default function Home({ recommendedProducts }: HomeProps) {
 
   return (
     <Container>
+      <SEO 
+        title="DevCommerce, your best e-commerce" 
+        shouldExcludeTitleSuffix={false} 
+        image="boost.png" 
+      />
+
       <div>
         <Title>Produtos recomendados</Title>
 
