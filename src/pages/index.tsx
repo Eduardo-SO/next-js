@@ -1,8 +1,7 @@
-import { useCallback } from 'react';
 import { GetServerSideProps } from 'next';
 
 import SEO from '@/components/SEO';
-import { Container, Title, Button } from '@/styles/pages';
+import { Container, Title } from '@/styles/pages';
 
 interface IProducts {
   id: number;
@@ -14,14 +13,6 @@ interface HomeProps {
 }
 
 export default function Home({ recommendedProducts }: HomeProps) {
-  const handleSum = useCallback(async () => {
-    const math = (await import('../lib/sum')).default;
-
-    console.log(process.env.NEXT_PUBLIC_API_URL);
-
-    alert(math.sum(5, 4));
-  }, []);
-
   return (
     <Container>
       <SEO 
@@ -41,8 +32,6 @@ export default function Home({ recommendedProducts }: HomeProps) {
             </li>
           ))}
         </ul>
-
-        <Button onClick={handleSum}>Somar</Button>
       </div>
     </Container>
   )
